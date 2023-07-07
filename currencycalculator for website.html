@@ -1,0 +1,110 @@
+    <head>
+        <meta charset="utf-8">
+        <title>Currency Calulator</title>
+	        
+    </head>
+    <body>
+        <label> $100-</label>
+        <input id="hundrend" type="text" name="" value="0" oninput="calculate()"/>
+        <br>
+        <label> $50-</label>
+        <input id="fifty" type="text" name="" value="0" oninput="calculate()"/>
+        <br>
+        <label> $20-</label>
+        <input id="twenty" type="text" name="" value="0" oninput="calculate()"/>
+        <br>
+        <label> $10-</label>
+        <input id="ten" type="text" name="" value="0" oninput="calculate()"/>
+        <br>
+        <label> $5-</label>
+        <input id="five" type="text" name="" value="0" oninput="calculate()"/>
+        <br>
+	<label> $2-</label>
+	<input id="two" type="text" name="" value="0" oninput="calculate()"/>
+	<br>
+        <label> $1-</label>
+        <input id="one" type="text" name="" value="0" oninput="calculate()"/>
+        <br>
+	<label> Half Dollar-</label>
+        <input id="halfdollar" type="text" name="" value="0" oninput="calculate()"/>
+        <br>
+        <label> Quarters-</label>
+        <input id="quarter" type="text" name="" value="0" oninput="calculate()"/>
+        <br>
+        <label> Dimes-</label>
+        <input id="dime" type="text" name="" value="0" oninput="calculate()"/>
+        <br>
+        <label> Nickels-</label>
+        <input id="nickel" type="text" name="" value="0" oninput="calculate()"/>
+        <br>
+        <label> Pennies-</label>
+        <input id="pennie" type="text" name="" value="0" oninput="calculate()"/>
+        <br>
+         <h1><label>Total</label></h1>
+        <h1><b><p id="Total" ></p></b></h1>
+        <br>
+
+    </body>
+    <script>
+        function calculate(){
+        var hundrends = (document.getElementById("hundrend").value)*100;
+        var fiftys = (document.getElementById("fifty").value) * 50;
+        var twentys = document.getElementById("twenty").value * 20;
+        var tens = document.getElementById("ten").value * 10;
+        var fives = document.getElementById("five").value * 5;
+	var twos = document.getElementById("two").value * 2;
+        var ones = document.getElementById("one").value * 1;
+	var halfdollar = document.getElementById("halfdollar").value * .5;
+        var quarters = document.getElementById("quarter").value * .25;
+        var dimes = document.getElementById("dime").value*.1;
+        var nickels = document.getElementById("nickel").value*.05;
+        var pennies = document.getElementById("pennie").value*.01;
+        document.getElementById("Total").innerHTML = '$'+((halfdollar+twos+quarters+dimes+nickels+hundrends+fiftys+twentys+tens+fives+ones+pennies).toFixed(2));
+        }
+    </script>
+</html>
+
+<style>
+body{
+    background-color: #66ccff;
+    text-align: center;
+}
+/* The sidebar menu */
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>

@@ -1,0 +1,164 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CS2 Scenario picker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Sidebar code-->
+</head>
+<body>
+
+<h1>CS2 scenario picker</h1>
+<hr>
+  <a href="https://www.psia-rm.org/download/resources/childrens-documents/childrens-specialist-2/CS2-Teaching-Scenarios-2022.pdf" target="blank">Click on this to get pdf of all current scenarios. After click the "Click me" button to get your card numbers. </a>
+
+<hr>
+
+<button onclick= "getRndInteger(1,11)">Click Me To Randomize Scenarios</button>
+<h3>Child 1</h3>
+<p id="cognitive"></p>
+<p id="age"></p>
+<p id="affective"></p>
+<p id="parent"></p>
+<p id="ski"></p>
+<p id="snowboard"></p>
+<hr>
+<h3>Child 2</h3>
+<p id="cognitive2"></p>
+<p id="age2"></p>
+<hr>
+
+<h2>How to use</h2>
+<p><b>PSIA/AASI now requires a second child to include in the scenarios with only an age and coginitive profile</b></p>
+<li>Click on button to get your student's profile.</li>
+<li> Build a lesson plan to acomodate all aspects of the student profile</li>
+<li> Include a beginning, middle and end to the lesson. Make it a 20 min teach</li>
+<li>This will require note taking on your part(Microsoft Word, Notpad, Pen and Paper).</li>
+<li><a href="https://docs.google.com/document/d/1V8xrOk5kWxxDqcsG-KTeqiJFWHhFHwmHsG1AloVNyrI/edit?usp=sharing" target="blank">This link contains a practice sheet to work with (work in progress)</a></li>
+<li><a href="https://www.psia-rm.org/education/childrens/#1540262210309-91ac8e79-962c" target="blank">Click this link to look at all childrens' resources</a></li>
+
+	
+
+
+
+
+
+
+<script>
+function getRndInteger(min, max) {
+ 
+  var randomage1 = Math.floor(Math.random() * (15 - 5 + 1) + 5);
+  document.getElementById("age").innerHTML = "Age:" + randomage1;
+
+  var randomcognitive1 = Math.floor(Math.random() * 11 + 1) ;
+  document.getElementById("cognitive").innerHTML = "Cognitive:" + randomcognitive1;
+
+  document.getElementById("affective").innerHTML = "Affective:" + Math.floor(Math.random() * 11 + 1) ;
+  document.getElementById("parent").innerHTML = "Parent:" + Math.floor(Math.random() * 8 + 1) ;
+  
+  document.getElementById("ski").innerHTML = "Ski:" + Math.floor(Math.random() * 8 + 1) ;
+  document.getElementById("snowboard").innerHTML = "Snowboard:" + Math.floor(Math.random() * 11 + 1) ;
+// makes the age of the second kid not match the 1st kid;  
+  var randomage2;
+  do {
+    randomage2 = Math.floor(Math.random() * (15 - 5 + 1) + 5);
+	} while (randomage2 === randomage1);
+  document.getElementById("age2").innerHTML = "Age:" + randomage2;
+// cognitives will not match  
+  var randomcognitive2;
+  do {
+    randomcognitive2 = Math.floor(Math.random() * 11 + 1);
+	} while (randomcognitive2 === randomcognitive1);
+  document.getElementById("cognitive2").innerHTML = "Cognitive:" + randomcognitive2;
+
+  
+
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+<style>
+/*Tag selectors*/
+html { overflow-y: scroll; }
+body{
+    background-color: rgb(153, 204, 255);
+    text-align: center;
+    
+}
+
+hr {
+    border-style: double;
+    height: 2px;
+    width: 45%;
+    background-color: rgb(105, 102, 102);
+}
+
+h1{
+    text-align:center;
+    color: rgb(54, 8, 17);
+}
+ul{
+    text-align:center;
+}
+li{
+    text-align:center;
+}
+table{
+   margin-left: auto;
+   margin-right: auto;
+}
+/*Class selectors*/
+.Goals {
+    color: rgb(209, 78, 78); 
+}
+
+.devonski:hover{
+    background-color: rgb(153, 204, 255);
+    
+}
+/*ID selectors*/
+#aboutme{
+    color: bisque;
+}
+
+/*Sidebar Nav*/
+.sidebar {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 16px;
+  }
+  
+  .sidebar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+  }
+  
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  .main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    padding: 0px 10px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }
+</style>
